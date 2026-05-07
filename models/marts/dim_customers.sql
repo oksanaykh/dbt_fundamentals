@@ -1,17 +1,12 @@
 with customers as (
     select * from {{ ref('stg_jaffle_shop__customers') }}
-
-
 ),
 
 orders as (
-
     select * from {{ ref('stg_jaffle_shop__orders') }}
-
 ),
 
 customer_orders as (
-
     select
         customer_id,
 
@@ -20,9 +15,7 @@ customer_orders as (
         count(order_id) as number_of_orders
 
     from orders
-
     group by 1
-
 ),
 
 
